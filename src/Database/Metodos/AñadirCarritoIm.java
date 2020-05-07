@@ -32,8 +32,8 @@ public class AñadirCarritoIm implements AñadirCarrito{
         try {
             smt = con.createStatement();
             String sql;
-            sql="INSERT INTO `pasteles`.`carrito` (`idUsuario`, `Pedidos`) VALUES ('"+idUsuario+"', '"+idProducto+"."+cantidad+"');";
-                smt.executeUpdate(sql);
+            sql="INSERT INTO `pasteles`.`carrito` (`idUsuario`, `Pedidos`, `Cantidad`) VALUES ('"+idUsuario+"','"+idProducto+"','"+cantidad+"');";
+            smt.executeUpdate(sql);
             //System.out.println("Exito");
             } catch (SQLException ex) {
             ex.printStackTrace();

@@ -48,7 +48,8 @@ public class PastelesServer {
      */
     public static void main(String[] args) throws RemoteException {
            
-        
+        EliminarCarritoIm elim= new EliminarCarritoIm();
+        elim.EliminarPro(1);
 //        String[] tipo= listip.lista();
 //        String[] sabor= lissab.Lista();
 //       String Tipo = (String) JOptionPane.showInputDialog(null, "Seleccione un tipo", "Tipos", JOptionPane.QUESTION_MESSAGE, null, tipo ,tipo[0] );

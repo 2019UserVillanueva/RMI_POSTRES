@@ -5,10 +5,35 @@
  */
 package Database.Metodos;
 
+import Database.Conexion;
+import Database.Interfaces.EliminarProducto;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  *
  * @author O-5-K
  */
-public class EliminarProductoIm {
+public class EliminarProductoIm implements EliminarProducto{
+    int[] numer;
+    private static Statement smt;
+    Conexion db = new Conexion();
+    Connection con =db.getCon();
+    private static ResultSet rs;
+    String aux;
+    
+    @Override
+    public void EliminarPro(int idProducto) {
+        try {
+            smt = con.createStatement();
+            String sql;
+            sql="DELETE FROM `pasteles`.`productos` WHERE  `idProductos`="+idProducto+";";
+            smt.execute(sql);
+            } catch (SQLException ex) {
+            ex.printStackTrace();
+        }        
+    }
     
 }

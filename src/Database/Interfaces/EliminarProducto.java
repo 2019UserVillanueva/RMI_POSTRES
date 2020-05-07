@@ -11,5 +11,5 @@ package Database.Interfaces;
  */
 public interface EliminarProducto {
     
-    
+    public void EliminarPro(int idProducto);
 }

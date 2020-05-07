@@ -11,7 +11,6 @@ package Database.Interfaces;
  */
 public interface EliminarCarrito {
     
-    public String[] numerpProducto(int idcarrito);
-    public void EliminarPro(String[] numPro,  int posicion);
+    public void EliminarPro(int idCarrito);
     
 }

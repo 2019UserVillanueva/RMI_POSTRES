@@ -25,34 +25,19 @@ public class EliminarCarritoIm implements EliminarCarrito{
     private static ResultSet rs;
     String aux;
     String[] a;
-    @Override
-    public String[] numerpProducto(int idcarrito) {
-        int posicion, contador = 0;
-        try {
-            smt = con.createStatement();
-            String sql = "SELECT Pedidos FROM carrito WHERE idUsuario = '"+idcarrito+"'";
-            rs = smt.executeQuery(sql);
-            while(rs.next()){
-                aux = rs.getString(1);
-            }
-            posicion = aux.indexOf(",");
-            while (posicion != -1) { 
-                contador++;
-                posicion = aux.indexOf(",", posicion + 1);
-            }
-            a= new String[contador];
-            a= aux.split(",");
-            System.out.println(a[1]);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return a;
-    }
+
 
     @Override
-    public void EliminarPro(String[] numPro, int posicion) {
-      
-        
+    public void EliminarPro(int idCarrito) {
+        try {
+            smt = con.createStatement();
+            String sql;
+            sql="DELETE FROM `pasteles`.`carrito` WHERE  `idCarrito`="+idCarrito+";";
+            smt.execute(sql);
+            //System.out.println("Exito");
+            } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
     
 }
