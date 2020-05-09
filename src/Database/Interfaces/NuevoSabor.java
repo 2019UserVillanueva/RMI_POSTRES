@@ -10,5 +10,6 @@ package Database.Interfaces;
  * @author O-5-K
  */
 public interface NuevoSabor {
+    public void agregar (String Sabor);
     
 }

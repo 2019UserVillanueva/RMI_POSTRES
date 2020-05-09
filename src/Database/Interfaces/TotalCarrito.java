@@ -11,4 +11,6 @@ package Database.Interfaces;
  */
 public interface TotalCarrito {
     
+    public int Total(int idUsuario);
+    
 }

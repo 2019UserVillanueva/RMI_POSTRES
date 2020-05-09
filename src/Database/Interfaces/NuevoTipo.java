@@ -10,5 +10,6 @@ package Database.Interfaces;
  * @author O-5-K
  */
 public interface NuevoTipo {
+    public void NuevoTipo(String Tipo);
     
 }

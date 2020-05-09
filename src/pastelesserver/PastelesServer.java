@@ -11,6 +11,7 @@ import Database.Metodos.EditarProductoIm;
 import Database.Metodos.EliminarCarritoIm;
 import Database.Metodos.ListaSaboresIm;
 import Database.Metodos.ListaTipos;
+import Database.Metodos.TotalCarritoIm;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -48,8 +49,8 @@ public class PastelesServer {
      */
     public static void main(String[] args) throws RemoteException {
            
-        EliminarCarritoIm elim= new EliminarCarritoIm();
-        elim.EliminarPro(1);
+        TotalCarritoIm total= new TotalCarritoIm();
+        System.out.println(total.Total(1));
 //        String[] tipo= listip.lista();
 //        String[] sabor= lissab.Lista();
 //       String Tipo = (String) JOptionPane.showInputDialog(null, "Seleccione un tipo", "Tipos", JOptionPane.QUESTION_MESSAGE, null, tipo ,tipo[0] );
