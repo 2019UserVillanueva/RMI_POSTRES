@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package Database.Interfaces;
-
+import java.rmi.RemoteException;
+import java.rmi.Remote;
 /**
  *
  * @author O-5-K
  */
-public interface NuevoTipo {
-    public void NuevoTipo(String Tipo);
+public interface NuevoTipo  extends Remote{
+    public void NuevoTipo(String Tipo)throws RemoteException;
     
 }

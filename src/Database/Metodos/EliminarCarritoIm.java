@@ -7,6 +7,8 @@ package Database.Metodos;
 
 import Database.Conexion;
 import Database.Interfaces.EliminarCarrito;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +19,9 @@ import javax.swing.JOptionPane;
  *
  * @author O-5-K
  */
-public class EliminarCarritoIm implements EliminarCarrito{
+public class EliminarCarritoIm extends UnicastRemoteObject implements  EliminarCarrito{
+        public EliminarCarritoIm() throws RemoteException{}
+
     int[] numer;
     private static Statement smt;
     Conexion db = new Conexion();

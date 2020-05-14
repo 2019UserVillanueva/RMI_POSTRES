@@ -10,7 +10,7 @@ import java.rmi.RemoteException;
  *
  * @author O-5-K
  */
-public interface AltaCliente{
-   public void Alta(String Nombres, String Apellidos, String Direccion, String Correo, String Password); 
+public interface AltaCliente extends Remote {
+   public void Alta(String Nombres, String Apellidos, String Direccion, String Correo, String Password)throws RemoteException; 
    
 }

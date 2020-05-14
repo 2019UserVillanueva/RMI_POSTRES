@@ -6,6 +6,8 @@
 package Database.Metodos;
 import Database.Conexion;
 import Database.Interfaces.ListaSabores;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +16,10 @@ import java.sql.Statement;
  *
  * @author O-5-K
  */
-public class ListaSaboresIm implements ListaSabores{
+public class ListaSaboresIm extends UnicastRemoteObject implements ListaSabores{
+        public ListaSaboresIm() throws RemoteException{}
+        
+
     int numero=0;
     private static Statement smt;
     Conexion db = new Conexion();

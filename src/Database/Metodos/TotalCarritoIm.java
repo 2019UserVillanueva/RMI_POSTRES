@@ -7,6 +7,8 @@ package Database.Metodos;
 
 import Database.Conexion;
 import Database.Interfaces.TotalCarrito;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +18,9 @@ import java.sql.Statement;
  *
  * @author O-5-K
  */
-public class TotalCarritoIm implements TotalCarrito{
+public class TotalCarritoIm extends UnicastRemoteObject implements TotalCarrito{
+        public TotalCarritoIm() throws RemoteException{}
+
     int[] productos, cantidad, precios;
     private static Statement smt;
     Conexion db = new Conexion();

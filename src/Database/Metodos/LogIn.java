@@ -7,6 +7,8 @@ package Database.Metodos;
 
 import Database.Conexion;
 import Database.Interfaces.Loging;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +18,9 @@ import javax.swing.JOptionPane;
  *
  * @author O-5-K
  */
-public class LogIn implements Loging {
+public class LogIn extends UnicastRemoteObject implements Loging {
+        public LogIn() throws RemoteException{}
+
     int a=0;
     private static Statement smt;
     Conexion db = new Conexion();

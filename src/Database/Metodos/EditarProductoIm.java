@@ -7,6 +7,8 @@ package Database.Metodos;
 
 import Database.Conexion;
 import Database.Interfaces.EditarProducto;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +17,9 @@ import java.sql.Statement;
  *
  * @author O-5-K
  */
-public class EditarProductoIm implements EditarProducto{
+public class EditarProductoIm extends UnicastRemoteObject implements EditarProducto{
+        public EditarProductoIm() throws RemoteException{}
+
 int numero=0;
     private static Statement smt;
     Conexion db = new Conexion();

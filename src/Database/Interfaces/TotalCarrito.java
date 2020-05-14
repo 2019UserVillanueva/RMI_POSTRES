@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package Database.Interfaces;
-
+import java.rmi.RemoteException;
+import java.rmi.Remote;
 /**
  *
  * @author O-5-K
  */
-public interface TotalCarrito {
+public interface TotalCarrito  extends Remote{
     
-    public int Total(int idUsuario);
+    public int Total(int idUsuario)throws RemoteException;
     
 }

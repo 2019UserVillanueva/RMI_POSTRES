@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package Database.Interfaces;
-
+import java.rmi.RemoteException;
+import java.rmi.Remote;
 /**
  *
  * @author O-5-K
  */
-public interface EliminarProducto {
+public interface EliminarProducto extends Remote{
     
-    public void EliminarPro(int idProducto);
+    public void EliminarPro(int idProducto)throws RemoteException;
 }

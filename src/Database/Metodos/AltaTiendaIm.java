@@ -7,6 +7,8 @@ package Database.Metodos;
 
 import Database.Conexion;
 import Database.Interfaces.AltaTienda;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +17,8 @@ import java.sql.Statement;
  *
  * @author O-5-K
  */
-public class AltaTiendaIm implements AltaTienda {
+public class AltaTiendaIm extends UnicastRemoteObject implements AltaTienda {
+    public AltaTiendaIm() throws RemoteException{}
         private static Statement smt;
         Conexion db = new Conexion();
         Connection con =db.getCon();

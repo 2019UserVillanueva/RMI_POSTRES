@@ -7,6 +7,8 @@ package Database.Metodos;
 
 import Database.Conexion;
 import Database.Interfaces.AñadirCarrito;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +18,9 @@ import java.sql.Statement;
  *
  * @author O-5-K
  */
-public class AñadirCarritoIm implements AñadirCarrito{
+public class AñadirCarritoIm extends UnicastRemoteObject implements AñadirCarrito{
+        public AñadirCarritoIm() throws RemoteException{}
+
     String[] StrTip;
     String [] StrSab;
      ListaTipos ListTip = new ListaTipos();

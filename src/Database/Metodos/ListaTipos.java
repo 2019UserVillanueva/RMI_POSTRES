@@ -6,6 +6,8 @@
 package Database.Metodos;
 import Database.Conexion;
 import Database.Interfaces.ListaTipoIn;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,7 +16,9 @@ import java.sql.Statement;
  *
  * @author O-5-K
  */
-public class ListaTipos implements ListaTipoIn{
+public class ListaTipos extends UnicastRemoteObject implements ListaTipoIn{
+        public ListaTipos() throws RemoteException{}
+
     int numero=0;
     
     private static Statement smt;

@@ -7,6 +7,8 @@ package Database.Metodos;
 
 import Database.Conexion;
 import Database.Interfaces.AltaProducto;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +17,8 @@ import java.sql.Statement;
  *
  * @author O-5-K
  */
-public class AltaPrductoIm implements AltaProducto{
+public class AltaPrductoIm extends UnicastRemoteObject implements AltaProducto{
+    public AltaPrductoIm() throws RemoteException{}
     String[] StrTip;
     String [] StrSab;
      ListaTipos ListTip = new ListaTipos();

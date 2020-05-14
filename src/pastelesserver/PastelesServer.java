@@ -5,63 +5,49 @@
  */
 package pastelesserver;
 
+import Database.Metodos.AltaClienteIm;
 import Database.Metodos.AltaPrductoIm;
+import Database.Metodos.AltaTiendaIm;
 import Database.Metodos.AñadirCarritoIm;
 import Database.Metodos.EditarProductoIm;
 import Database.Metodos.EliminarCarritoIm;
+import Database.Metodos.EliminarProductoIm;
 import Database.Metodos.ListaSaboresIm;
 import Database.Metodos.ListaTipos;
+import Database.Metodos.LogIn;
+import Database.Metodos.NuevoSaborIm;
+import Database.Metodos.NuevoTipoIm;
 import Database.Metodos.TotalCarritoIm;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.rmi.RemoteException;
+import java.rmi.registry.Registry;
 import javax.swing.JOptionPane;
-
 
 /**
  *
  * @author O-5-K
  */
 public class PastelesServer {
-    
-    private static Statement smt;
-    private static ResultSet rs;
-   
-    
-    //punto 1 Area del piso.
-    public static String getArea_piso(Connection con){
-        String aux=null;
-         try {
-            smt = con.createStatement();
-            String sql = "SELECT Correo FROM usuario WHERE idUsuario = '"+3+"'";
-            rs = smt.executeQuery(sql);
-            while(rs.next())
-                aux = rs.getString(1);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-         return aux;
-    }
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws RemoteException {
-           
-        TotalCarritoIm total= new TotalCarritoIm();
-        System.out.println(total.Total(1));
-//        String[] tipo= listip.lista();
-//        String[] sabor= lissab.Lista();
-//       String Tipo = (String) JOptionPane.showInputDialog(null, "Seleccione un tipo", "Tipos", JOptionPane.QUESTION_MESSAGE, null, tipo ,tipo[0] );
-//        String Sabor = (String) JOptionPane.showInputDialog(null, "Seleccione el Sabopr", "Sabores", JOptionPane.QUESTION_MESSAGE, null, sabor, sabor[0]);
-//        String Nombre=JOptionPane.showInputDialog("Nombre del Producto");
-//        String Descripcion=JOptionPane.showInputDialog("Descripcicion del producto");
-//        int stock=Integer.parseInt(JOptionPane.showInputDialog("stock"));
-//        int precio=Integer.parseInt(JOptionPane.showInputDialog("precio"));
-
-           
-
+    public static void main(String[] args){  
+        try{
+            Registry r= java.rmi.registry.LocateRegistry.createRegistry(1099);
+                r.rebind("AltaCliente", new AltaClienteIm());
+                r.rebind("AltaPrducto", new AltaPrductoIm());
+                r.rebind("AltaTienda", new AltaTiendaIm());
+                r.rebind("AñadirCarrito", new AñadirCarritoIm());
+                r.rebind("EditarProducto", new EditarProductoIm());
+                r.rebind("EliminarCarrito", new EliminarCarritoIm());
+                r.rebind("EliminarProducto", new EliminarProductoIm());
+                r.rebind("ListaSabores", new ListaSaboresIm());
+                r.rebind("ListaTipos", new ListaTipos());
+                r.rebind("Login", new LogIn());
+                r.rebind("NuevoSabor", new NuevoSaborIm());
+                r.rebind("NuevoTipo", new NuevoTipoIm());
+                r.rebind("TotalCarrito", new TotalCarritoIm());
+                JOptionPane.showMessageDialog(null, "Servidor Conectado" );
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
-        
 }

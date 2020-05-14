@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package Database.Interfaces;
-
+import java.rmi.RemoteException;
+import java.rmi.Remote;
 /**
  *
  * @author O-5-K
  */
-public interface NuevoSabor {
-    public void agregar (String Sabor);
+public interface NuevoSabor extends Remote{
+    public void agregar (String Sabor)throws RemoteException;
     
 }

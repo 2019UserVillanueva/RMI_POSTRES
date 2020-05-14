@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package Database.Interfaces;
-
+import java.rmi.RemoteException;
+import java.rmi.Remote;
 /**
  *
  * @author O-5-K
  */
-public interface AñadirCarrito {
-    public void añadir(int idUsuario, int idProducto, int cantidad);
+public interface AñadirCarrito  extends Remote{
+    public void añadir(int idUsuario, int idProducto, int cantidad)throws RemoteException;
     
 }

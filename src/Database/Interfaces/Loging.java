@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package Database.Interfaces;
-
+import java.rmi.RemoteException;
+import java.rmi.Remote;
 /**
  *
  * @author O-5-K
  */
-public interface Loging {
-    public int Log(String Correo, String Password);
+public interface Loging extends Remote{
+    public int Log(String Correo, String Password)throws RemoteException;
 }

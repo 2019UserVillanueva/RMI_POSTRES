@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package Database.Interfaces;
-
+import java.rmi.RemoteException;
+import java.rmi.Remote;
 /**
  *
  * @author O-5-K
  */
-public interface ListaSabores {
-    public String[] Lista();
+public interface ListaSabores  extends Remote{
+    public String[] Lista()throws RemoteException;
     
 }

@@ -7,6 +7,8 @@ package Database.Metodos;
 
 import Database.Conexion;
 import Database.Interfaces.NuevoTipo;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +17,9 @@ import java.sql.Statement;
  *
  * @author O-5-K
  */
-public class NuevoTipoIm implements NuevoTipo{
+public class NuevoTipoIm extends UnicastRemoteObject implements NuevoTipo{
+        public NuevoTipoIm() throws RemoteException{}
+
     private static Statement smt;
     Conexion db = new Conexion();
     Connection con =db.getCon();
