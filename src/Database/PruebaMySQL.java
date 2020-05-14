@@ -16,7 +16,7 @@
 package Database;
 
 import java.sql.*;
-
+//Holo
 /**
  * Clase de prueba de conexión con una base de datos MySQL
  */
