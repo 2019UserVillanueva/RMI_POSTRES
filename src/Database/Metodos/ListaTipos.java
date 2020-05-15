@@ -19,14 +19,12 @@ import java.sql.Statement;
 public class ListaTipos extends UnicastRemoteObject implements ListaTipoIn{
         public ListaTipos() throws RemoteException{}
 
-    int numero=0;
-    
+    int numero=0, i=0;
     private static Statement smt;
     Conexion db = new Conexion();
     Connection con =db.getCon();
     String a[];
     private static ResultSet rs;
-    int i=0;
     
     @Override
     public String[] lista(){

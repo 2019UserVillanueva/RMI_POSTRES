@@ -9,6 +9,7 @@ import Database.Metodos.AltaClienteIm;
 import Database.Metodos.AltaPrductoIm;
 import Database.Metodos.AltaTiendaIm;
 import Database.Metodos.AñadirCarritoIm;
+import Database.Metodos.CarritoIm;
 import Database.Metodos.EditarProductoIm;
 import Database.Metodos.EliminarCarritoIm;
 import Database.Metodos.EliminarProductoIm;
@@ -18,6 +19,7 @@ import Database.Metodos.LogIn;
 import Database.Metodos.NuevoSaborIm;
 import Database.Metodos.NuevoTipoIm;
 import Database.Metodos.TotalCarritoIm;
+
 import java.rmi.registry.Registry;
 import javax.swing.JOptionPane;
 
@@ -45,6 +47,7 @@ public class PastelesServer {
                 r.rebind("NuevoSabor", new NuevoSaborIm());
                 r.rebind("NuevoTipo", new NuevoTipoIm());
                 r.rebind("TotalCarrito", new TotalCarritoIm());
+                r.rebind("Carrito", new CarritoIm());
                 JOptionPane.showMessageDialog(null, "Servidor Conectado" );
         }catch(Exception e){
             System.out.println(e);
