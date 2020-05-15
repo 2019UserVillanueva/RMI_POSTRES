@@ -11,5 +11,5 @@ import java.rmi.Remote;
  * @author O-5-K
  */
 public interface Loging extends Remote{
-    public int Log(String Correo, String Password)throws RemoteException;
+    public int[] Log(String Correo, String Password)throws RemoteException;
 }
